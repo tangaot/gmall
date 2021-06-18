@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/ods/create_table.sql" dialect="HiveQL" />
+    <file url="file://$PROJECT_DIR$/src/ca/tangaot/gamll/dim/dim_sku_info/create_dim_sku_info.sql" dialect="HiveQL" />
+    <file url="file://$PROJECT_DIR$/src/ca/tangaot/gamll/dim/dim_sku_info/insert_dim_sku_info.sql" dialect="HiveQL" />
+    <file url="file://$PROJECT_DIR$/src/ca/tangaot/gamll/dim/dim_sku_info/insert_init_dim_sku_info.sql" dialect="HiveQL" />
+    <file url="file://$PROJECT_DIR$/src/ca/tangaot/gamll/ods/create_ods_table.sql" dialect="HiveQL" />
+    <file url="PROJECT" dialect="HiveQL" />
   </component>
 </project>

@@ -1,9 +1,0 @@
-#!/bin/bash
-#Cluster jps command
-
-echo "########## hadoop102 ##########"
-ssh hadoop102 jps
-echo "########## hadoop103 ##########"
-ssh hadoop103 jps
-echo "########## hadoop104 ##########"
-ssh hadoop104 jps

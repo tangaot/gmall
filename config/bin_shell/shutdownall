@@ -1,9 +1,0 @@
-#!/bin/bash
-#shutdown the cluster (hadoop102, hadoop103, hadoop104)
-
-echo "########## hadoop104 ##########"
-ssh hadoop104 sudo shutdown -h now 
-echo "########## hadoop103 ##########"
-ssh hadoop103 sudo shutdown -h now
-echo "########## hadoop102 ##########"
-ssh hadoop102 sudo shutdown -h now

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gmall.iml" filepath="$PROJECT_DIR$/gmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hivefunction/hivefunction.iml" filepath="$PROJECT_DIR$/hivefunction/hivefunction.iml" />
     </modules>
   </component>
 </project>

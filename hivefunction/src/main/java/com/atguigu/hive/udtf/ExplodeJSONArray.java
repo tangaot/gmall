@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExplodeJSONArray extends GenericUDTF {
-    //1233
 
     @Override
     public StructObjectInspector initialize(ObjectInspector[] argOIs) throws UDFArgumentException {

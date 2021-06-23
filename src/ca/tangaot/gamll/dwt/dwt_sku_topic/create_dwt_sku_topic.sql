@@ -1,0 +1,113 @@
+-- 商品主题
+
+USE gmall;
+
+DROP TABLE IF EXISTS dwt_sku_topic;
+CREATE EXTERNAL TABLE dwt_sku_topic
+(
+    `sku_id`                                STRING COMMENT 'sku_id',
+    `order_last_1d_count`                   BIGINT COMMENT '最近1日被下单次数',
+    `order_last_1d_num`                     BIGINT COMMENT '最近1日被下单件数',
+    `order_activity_last_1d_count`          BIGINT COMMENT '最近1日参与活动被下单次数',
+    `order_coupon_last_1d_count`            BIGINT COMMENT '最近1日使用优惠券被下单次数',
+    `order_activity_reduce_last_1d_amount`  DECIMAL(16, 2) COMMENT '最近1日优惠金额(活动)',
+    `order_coupon_reduce_last_1d_amount`    DECIMAL(16, 2) COMMENT '最近1日优惠金额(优惠券)',
+    `order_last_1d_original_amount`         DECIMAL(16, 2) COMMENT '最近1日被下单原始金额',
+    `order_last_1d_final_amount`            DECIMAL(16, 2) COMMENT '最近1日被下单最终金额',
+    `order_last_7d_count`                   BIGINT COMMENT '最近7日被下单次数',
+    `order_last_7d_num`                     BIGINT COMMENT '最近7日被下单件数',
+    `order_activity_last_7d_count`          BIGINT COMMENT '最近7日参与活动被下单次数',
+    `order_coupon_last_7d_count`            BIGINT COMMENT '最近7日使用优惠券被下单次数',
+    `order_activity_reduce_last_7d_amount`  DECIMAL(16, 2) COMMENT '最近7日优惠金额(活动)',
+    `order_coupon_reduce_last_7d_amount`    DECIMAL(16, 2) COMMENT '最近7日优惠金额(优惠券)',
+    `order_last_7d_original_amount`         DECIMAL(16, 2) COMMENT '最近7日被下单原始金额',
+    `order_last_7d_final_amount`            DECIMAL(16, 2) COMMENT '最近7日被下单最终金额',
+    `order_last_30d_count`                  BIGINT COMMENT '最近30日被下单次数',
+    `order_last_30d_num`                    BIGINT COMMENT '最近30日被下单件数',
+    `order_activity_last_30d_count`         BIGINT COMMENT '最近30日参与活动被下单次数',
+    `order_coupon_last_30d_count`           BIGINT COMMENT '最近30日使用优惠券被下单次数',
+    `order_activity_reduce_last_30d_amount` DECIMAL(16, 2) COMMENT '最近30日优惠金额(活动)',
+    `order_coupon_reduce_last_30d_amount`   DECIMAL(16, 2) COMMENT '最近30日优惠金额(优惠券)',
+    `order_last_30d_original_amount`        DECIMAL(16, 2) COMMENT '最近30日被下单原始金额',
+    `order_last_30d_final_amount`           DECIMAL(16, 2) COMMENT '最近30日被下单最终金额',
+    `order_count`                           BIGINT COMMENT '累积被下单次数',
+    `order_num`                             BIGINT COMMENT '累积被下单件数',
+    `order_activity_count`                  BIGINT COMMENT '累积参与活动被下单次数',
+    `order_coupon_count`                    BIGINT COMMENT '累积使用优惠券被下单次数',
+    `order_activity_reduce_amount`          DECIMAL(16, 2) COMMENT '累积优惠金额(活动)',
+    `order_coupon_reduce_amount`            DECIMAL(16, 2) COMMENT '累积优惠金额(优惠券)',
+    `order_original_amount`                 DECIMAL(16, 2) COMMENT '累积被下单原始金额',
+    `order_final_amount`                    DECIMAL(16, 2) COMMENT '累积被下单最终金额',
+    `payment_last_1d_count`                 BIGINT COMMENT '最近1日被支付次数',
+    `payment_last_1d_num`                   BIGINT COMMENT '最近1日被支付件数',
+    `payment_last_1d_amount`                DECIMAL(16, 2) COMMENT '最近1日被支付金额',
+    `payment_last_7d_count`                 BIGINT COMMENT '最近7日被支付次数',
+    `payment_last_7d_num`                   BIGINT COMMENT '最近7日被支付件数',
+    `payment_last_7d_amount`                DECIMAL(16, 2) COMMENT '最近7日被支付金额',
+    `payment_last_30d_count`                BIGINT COMMENT '最近30日被支付次数',
+    `payment_last_30d_num`                  BIGINT COMMENT '最近30日被支付件数',
+    `payment_last_30d_amount`               DECIMAL(16, 2) COMMENT '最近30日被支付金额',
+    `payment_count`                         BIGINT COMMENT '累积被支付次数',
+    `payment_num`                           BIGINT COMMENT '累积被支付件数',
+    `payment_amount`                        DECIMAL(16, 2) COMMENT '累积被支付金额',
+    `refund_order_last_1d_count`            BIGINT COMMENT '最近1日退单次数',
+    `refund_order_last_1d_num`              BIGINT COMMENT '最近1日退单件数',
+    `refund_order_last_1d_amount`           DECIMAL(16, 2) COMMENT '最近1日退单金额',
+    `refund_order_last_7d_count`            BIGINT COMMENT '最近7日退单次数',
+    `refund_order_last_7d_num`              BIGINT COMMENT '最近7日退单件数',
+    `refund_order_last_7d_amount`           DECIMAL(16, 2) COMMENT '最近7日退单金额',
+    `refund_order_last_30d_count`           BIGINT COMMENT '最近30日退单次数',
+    `refund_order_last_30d_num`             BIGINT COMMENT '最近30日退单件数',
+    `refund_order_last_30d_amount`          DECIMAL(16, 2) COMMENT '最近30日退单金额',
+    `refund_order_count`                    BIGINT COMMENT '累积退单次数',
+    `refund_order_num`                      BIGINT COMMENT '累积退单件数',
+    `refund_order_amount`                   DECIMAL(16, 2) COMMENT '累积退单金额',
+    `refund_payment_last_1d_count`          BIGINT COMMENT '最近1日退款次数',
+    `refund_payment_last_1d_num`            BIGINT COMMENT '最近1日退款件数',
+    `refund_payment_last_1d_amount`         DECIMAL(16, 2) COMMENT '最近1日退款金额',
+    `refund_payment_last_7d_count`          BIGINT COMMENT '最近7日退款次数',
+    `refund_payment_last_7d_num`            BIGINT COMMENT '最近7日退款件数',
+    `refund_payment_last_7d_amount`         DECIMAL(16, 2) COMMENT '最近7日退款金额',
+    `refund_payment_last_30d_count`         BIGINT COMMENT '最近30日退款次数',
+    `refund_payment_last_30d_num`           BIGINT COMMENT '最近30日退款件数',
+    `refund_payment_last_30d_amount`        DECIMAL(16, 2) COMMENT '最近30日退款金额',
+    `refund_payment_count`                  BIGINT COMMENT '累积退款次数',
+    `refund_payment_num`                    BIGINT COMMENT '累积退款件数',
+    `refund_payment_amount`                 DECIMAL(16, 2) COMMENT '累积退款金额',
+    `cart_last_1d_count`                    BIGINT COMMENT '最近1日被加入购物车次数',
+    `cart_last_7d_count`                    BIGINT COMMENT '最近7日被加入购物车次数',
+    `cart_last_30d_count`                   BIGINT COMMENT '最近30日被加入购物车次数',
+    `cart_count`                            BIGINT COMMENT '累积被加入购物车次数',
+    `favor_last_1d_count`                   BIGINT COMMENT '最近1日被收藏次数',
+    `favor_last_7d_count`                   BIGINT COMMENT '最近7日被收藏次数',
+    `favor_last_30d_count`                  BIGINT COMMENT '最近30日被收藏次数',
+    `favor_count`                           BIGINT COMMENT '累积被收藏次数',
+    `appraise_last_1d_good_count`           BIGINT COMMENT '最近1日好评数',
+    `appraise_last_1d_mid_count`            BIGINT COMMENT '最近1日中评数',
+    `appraise_last_1d_bad_count`            BIGINT COMMENT '最近1日差评数',
+    `appraise_last_1d_default_count`        BIGINT COMMENT '最近1日默认评价数',
+    `appraise_last_7d_good_count`           BIGINT COMMENT '最近7日好评数',
+    `appraise_last_7d_mid_count`            BIGINT COMMENT '最近7日中评数',
+    `appraise_last_7d_bad_count`            BIGINT COMMENT '最近7日差评数',
+    `appraise_last_7d_default_count`        BIGINT COMMENT '最近7日默认评价数',
+    `appraise_last_30d_good_count`          BIGINT COMMENT '最近30日好评数',
+    `appraise_last_30d_mid_count`           BIGINT COMMENT '最近30日中评数',
+    `appraise_last_30d_bad_count`           BIGINT COMMENT '最近30日差评数',
+    `appraise_last_30d_default_count`       BIGINT COMMENT '最近30日默认评价数',
+    `appraise_good_count`                   BIGINT COMMENT '累积好评数',
+    `appraise_mid_count`                    BIGINT COMMENT '累积中评数',
+    `appraise_bad_count`                    BIGINT COMMENT '累积差评数',
+    `appraise_default_count`                BIGINT COMMENT '累积默认评价数'
+) COMMENT '商品主题宽表'
+    PARTITIONED BY (`dt` STRING)
+    STORED AS ORC
+    LOCATION '/warehouse/gmall/dwt/dwt_sku_topic/'
+    TBLPROPERTIES ("orc.compress" = "snappy");
+
+
+
+
+
+
+
+
